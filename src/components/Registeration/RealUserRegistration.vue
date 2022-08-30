@@ -3,27 +3,62 @@
     <v-form ref="form" v-model="valid" lazy-validation class="w-100">
       <div class="mb-4">
         <label for="name" class="d-block mb-2 mt-3">نام :</label>
-        <input v-model="name" name="name" class="input-field" placeholder="نام را وارد کنید" required />
+        <input v-model="name" type="text" name="name" class="input-field" placeholder="نام را وارد کنید" required />
       </div>
       <div class="mb-4">
         <label for="lastName" class="d-block mb-2 mt-3"> نام خانوادگی :</label>
-        <input v-model="lastName" name="lastName" class="input-field" placeholder="نام خانوادگی را وارد کنید" required />
+        <input
+          v-model="lastName"
+          type="text"
+          name="lastName"
+          class="input-field"
+          placeholder="نام خانوادگی را وارد کنید"
+          required
+        />
       </div>
       <div class="mb-4">
         <label for="nationalCode" class="d-block mb-2 mt-3">کد ملی :</label>
-        <input v-model="nationalCode" name="nationalCode" class="input-field" placeholder="کد ملی را وارد کنید" required />
+        <input
+          v-model="nationalCode"
+          type="number"
+          name="nationalCode"
+          class="input-field"
+          placeholder="کد ملی را وارد کنید"
+          required
+        />
       </div>
       <div class="mb-4">
         <label for="email" class="d-block mb-2 mt-3"> ایمیل :</label>
-        <input v-model="email" name="email" class="input-field" placeholder="ایمیل را وارد کنید" required />
+        <input
+          v-model="email"
+          type="email"
+          name="email"
+          class="input-field"
+          placeholder="ایمیل را وارد کنید"
+          required
+        />
       </div>
       <div class="mb-4">
         <label for="phone" class="d-block mb-2 mt-3"> شماره تماس :</label>
-        <input v-model="phone" name="phone" class="input-field" placeholder="شماره تماس را وارد کنید" required />
+        <input
+          v-model="phone"
+          type="number"
+          name="phone"
+          class="input-field"
+          placeholder="شماره تماس را وارد کنید"
+          required
+        />
       </div>
       <div class="mb-4">
         <label for="password" class="d-block mb-2 mt-3"> گذر واژه :</label>
-        <input v-model="password" name="password" class="input-field" placeholder="گذر واژه را وارد کنید" required />
+        <input
+          v-model="password"
+          type="text"
+          name="password"
+          class="input-field"
+          placeholder="گذر واژه را وارد کنید"
+          required
+        />
       </div>
 
       <!-- <v-text-field v-model="name" :rules="fieldRules" label="نام شرکت" required></v-text-field> -->
@@ -68,6 +103,12 @@ export default {
   .input-field:focus {
     outline: none;
     border: 1px solid #2db259;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 
   .user-registration-btn {

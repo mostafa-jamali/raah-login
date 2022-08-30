@@ -4,36 +4,30 @@
       <v-col outlined class="d-flex justify-center">
         <v-card class="register-card">
           <div class="text-center">
-            <img src="../../assets/logo.png" alt="" width="100px" height="100px" />
+            <img src="@/assets/logo.png" alt="" width="100px" height="100px" />
           </div>
           <div class="d-flex">
             <a href="#" class="login-btn login-btn-active text-center my-4">ورود</a>
             <a href="#" class="registration-btn registration-btn-active text-center my-4">ثبت نام</a>
           </div>
-          <v-switch v-model="userType" :label="userType ? 'حقوقی' : 'حقیقی'"></v-switch>
-          <legal-user-registration v-if="legalUserShow" />
-          <real-user-registration v-else />
+          <user-sign-in v-if="loginShow" />
+          <registeration v-else />
         </v-card>
       </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
-import LegalUserRegistration from '@/components/LegalUserRegistration.vue';
-import RealUserRegistration from '@/components/RealUserRegistration.vue';
-
+import Registeration from '@/components/Registeration.vue';
+import UserSignIn from '../../components/SignIn/UserSignIn.vue';
 export default {
   name: 'Register',
-  components: { LegalUserRegistration, RealUserRegistration },
-  watch: {
-    userType(value) {
-      this.legalUserShow = value;
-    },
+  components: { Registeration, UserSignIn },
+  data() {
+    return {
+      loginShow: false,
+    };
   },
-  data: () => ({
-    userType: false,
-    legalUserShow: false,
-  }),
 };
 </script>
 <style lang="scss">

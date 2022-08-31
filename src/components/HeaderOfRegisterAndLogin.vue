@@ -4,9 +4,9 @@
       <img src="@/assets/logo.png" alt="" width="100px" height="100px" />
     </div>
     <div class="d-flex">
-      <a href="/login" class="login-btn text-center my-4" :class="routePath == '/login' ? 'login-btn-active' : ''"
-        >ورود</a
-      >
+      <a href="/login" class="login-btn text-center my-4" :class="routePath == '/login' ? 'login-btn-active' : ''">
+        ورود
+      </a>
       <a
         href="/register"
         class="registration-btn text-center my-4"

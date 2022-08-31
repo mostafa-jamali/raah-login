@@ -1,7 +1,7 @@
 <template>
   <div class="legal-user-registration">
     <v-form ref="form" v-model="valid" lazy-validation class="w-100">
-      <div class="mb-4">
+      <div class="input-field-container mb-4">
         <label for="companyName" class="d-block mb-2 mt-3">نام شرکت :</label>
         <input
           v-model="companyName"
@@ -11,8 +11,9 @@
           placeholder="نام شرکت را وارد کنید"
           required
         />
+        <v-icon class="inputs-icon">{{ iconPathes.company }}</v-icon>
       </div>
-      <div class="mb-4">
+      <div class="input-field-container mb-4">
         <label for="companyType" class="d-block mb-2 mt-3">نوع شرکت :</label>
         <input
           v-model="companyType"
@@ -22,8 +23,9 @@
           placeholder="نوع شرکت را وارد کنید"
           required
         />
+        <v-icon class="inputs-icon">{{ iconPathes.company }}</v-icon>
       </div>
-      <div class="mb-4">
+      <div class="input-field-container mb-4">
         <label for="nationalID" class="d-block mb-2 mt-3">شناسه ملی :</label>
         <input
           v-model="nationalID"
@@ -33,8 +35,9 @@
           placeholder="شناسه ملی را وارد کنید"
           required
         />
+        <v-icon class="inputs-icon">{{ iconPathes.company }}</v-icon>
       </div>
-      <div class="mb-4">
+      <div class="input-field-container mb-4">
         <label for="email" class="d-block mb-2 mt-3"> ایمیل :</label>
         <input
           v-model="email"
@@ -44,8 +47,9 @@
           placeholder="ایمیل را وارد کنید"
           required
         />
+        <v-icon class="inputs-icon">{{ iconPathes.email }}</v-icon>
       </div>
-      <div class="mb-4">
+      <div class="input-field-container mb-4">
         <label for="phone" class="d-block mb-2 mt-3"> شماره تماس :</label>
         <input
           v-model="phone"
@@ -55,8 +59,9 @@
           placeholder="شماره تماس را وارد کنید"
           required
         />
+        <v-icon class="inputs-icon">{{ iconPathes.phone }}</v-icon>
       </div>
-      <div class="mb-4">
+      <div class="input-field-container mb-4">
         <label for="password" class="d-block mb-2 mt-3"> گذر واژه :</label>
         <input
           v-model="password"
@@ -66,13 +71,16 @@
           placeholder="گذر واژه را وارد کنید"
           required
         />
+        <v-icon class="inputs-icon">{{ iconPathes.password }}</v-icon>
       </div>
 
-      <v-btn color="primary" class="user-registration-btn my-4"> ایجاد کاربر </v-btn>
+      <v-btn color="primary" class="add-new-user-btn my-4"> ایجاد کاربر </v-btn>
     </v-form>
   </div>
 </template>
 <script>
+import { pathes } from '@/plugins/mdiIcons';
+
 export default {
   name: 'LegalUserRegistration',
   data: () => ({
@@ -83,6 +91,7 @@ export default {
     phone: '',
     password: '',
     email: '',
+    iconPathes: pathes,
   }),
 };
 </script>
@@ -106,13 +115,6 @@ export default {
   input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
-  }
-
-  .user-registration-btn {
-    width: 100%;
-    height: 50px !important;
-    border-radius: 30px;
-    background-image: -webkit-linear-gradient(0deg, #109792 1%, #47e33f 100%);
   }
 }
 </style>

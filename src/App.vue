@@ -1,15 +1,13 @@
 <template>
   <v-app class="app">
-    <register />
+    <router-view></router-view>
   </v-app>
 </template>
 
 <script>
-import Register from './views/pages/Register.vue';
 import './styles/app.scss';
 
 export default {
   name: 'App',
-  components: { Register },
 };
 </script>

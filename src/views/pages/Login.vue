@@ -4,18 +4,18 @@
       <v-col outlined class="d-flex justify-center">
         <v-card class="register-card">
           <header-of-register-and-login />
-          <registeration />
+          <user-sign-in />
         </v-card>
       </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
-import Registeration from '@/components/Registeration.vue';
+import UserSignIn from '@/components/SignIn/UserSignIn.vue';
 import HeaderOfRegisterAndLogin from '@/components/HeaderOfRegisterAndLogin.vue';
 export default {
-  name: 'Register',
-  components: { Registeration, HeaderOfRegisterAndLogin },
+  name: 'Login',
+  components: { UserSignIn, HeaderOfRegisterAndLogin },
 };
 </script>
 <style lang="scss">

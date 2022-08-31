@@ -53,7 +53,7 @@
         <label for="password" class="d-block mb-2 mt-3"> گذر واژه :</label>
         <input
           v-model="password"
-          type="text"
+          type="password"
           name="password"
           class="input-field"
           placeholder="گذر واژه را وارد کنید"
@@ -61,9 +61,7 @@
         />
       </div>
 
-      <!-- <v-text-field v-model="name" :rules="fieldRules" label="نام شرکت" required></v-text-field> -->
-
-      <v-btn color="primary" class="user-registration-btn my-4" @click="resetValidation"> ایجاد کاربر </v-btn>
+      <v-btn color="primary" class="user-registration-btn my-4"> ایجاد کاربر </v-btn>
     </v-form>
   </div>
 </template>
@@ -77,16 +75,8 @@ export default {
     nationalCode: '',
     phone: '',
     password: '',
-    fieldRules: [v => !!v || 'این فیلد الزامی می باشد.'],
     email: '',
-    emailRules: [v => !!v || 'این فیلد الزامی می باشد.', v => /.+@.+\..+/.test(v) || 'E-mail must be valid'],
   }),
-
-  methods: {
-    resetValidation() {
-      this.$refs.form.resetValidation();
-    },
-  },
 };
 </script>
 <style lang="scss" scoped>
